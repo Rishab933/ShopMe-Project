@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@theme {
+  /* Adding Custom Colors */
+  --color-primary: #4263eb;
+  --color-secondary: #63e6be;
+
+  /* Customizing the Container */
+  --spacing-container-padding: 1rem;
+  /* For responsive padding, you use media queries in v4 */
+}
+
+/* Custom Container Logic for v4 */
+@utility container {
+  margin-inline: auto;
+  padding-inline: var(--spacing-container-padding);
+  
+  @media (width >= theme(--breakpoint-sm)) {
+    padding-inline: 3rem;
+  }
+}
+
+@variant dark (&:where(.dark, .dark *));
